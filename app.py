@@ -54,10 +54,8 @@ async def train_model(request: Request):
         training_pipeline = TrainingPipeline()
         training_pipeline.run_pipeline()
         
-        # Optionally, return a success message or any artifact
-        return templates.TemplateResponse("home.html", {"request": request, "message": "Model training completed successfully!"})
+        return "Success"
 
     except Exception as e:
-        # Handle errors in training
-        return templates.TemplateResponse("home.html", {"request": request, "error": f"An error occurred during training: {str(e)}"})
+        return "Error"
 
