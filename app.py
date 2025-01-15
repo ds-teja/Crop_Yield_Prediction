@@ -61,5 +61,3 @@ async def train_model(request: Request):
         # Handle errors in training
         return templates.TemplateResponse("home.html", {"request": request, "error": f"An error occurred during training: {str(e)}"})
 
-if __name__ == "__main__":
-    pass
